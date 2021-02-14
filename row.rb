@@ -1,6 +1,6 @@
 require './ics'
 class Row
-  attr_reader :input, :first_name, :last_name, :country, :number, :numbers, :credits
+  attr_reader :input, :first_name, :last_name, :country, :numbers, :credits
 
   def initialize(string)
 	@input = string.split(',').map(&:strip)
