@@ -11,9 +11,9 @@ File.readlines(path).each do |row|
   player = Row.new(row)
 
   if (dup = player_list.detect{ |r| r.last_name == player.last_name && r.first_name == player.first_name && r.country == player.country })
-	dup.add_number(player.numbers)
+	  dup.add_number(player.numbers)
   else
-	player_list << player
+	  player_list << player
   end
 end
 
@@ -26,7 +26,7 @@ player_list = player_list.sort_by(&:country).sort_by(&:first_name).sort_by(&:las
 
 File.open('result.txt', 'w') do |file|
   player_list.each do |row|
-	file.puts row.to_string if row.credits > 0
+	  file.puts row.to_string if row.credits > 0
   end
 end
 
