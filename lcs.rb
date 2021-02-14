@@ -1,4 +1,4 @@
-class Ics
+class Lcs
   attr_reader :sample, :number
 
   def initialize(sample, number)
@@ -6,11 +6,11 @@ class Ics
 	@number = number.to_s
   end
 
-  def ics_length
-	ics_array.last.last
+  def lcs_length
+	lcs_array.last.last
   end
 
-  def ics_array
+  def lcs_array
 	result = [Array.new(@number.length + 1, 0)]
 	@sample.split('').each do |sample_value|
 	  row = [0]
@@ -25,7 +25,7 @@ class Ics
 
   class << self
 	def call(sample, number)
-	  self.new(sample, number).ics_length
+	  self.new(sample, number).lcs_length
 	end
   end
 end

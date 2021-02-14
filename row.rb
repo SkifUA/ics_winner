@@ -1,4 +1,4 @@
-require './ics'
+require './lcs'
 class Row
   attr_reader :input, :first_name, :last_name, :country, :numbers, :credits
 
@@ -23,7 +23,7 @@ class Row
   def set_credits(sample)
 	@credits = 0
 	@numbers.each do |num|
-	  @credits += Ics.call(sample, num)
+	  @credits += Lcs.call(sample, num)
 	end
   end
 

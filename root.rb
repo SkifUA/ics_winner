@@ -17,7 +17,7 @@ File.readlines(path).each do |row|
   end
 end
 
-# Set ICS credits
+# Set LCS credits
 player_list.map{ |p| p.set_credits(sumple) }
 
 
