@@ -21,12 +21,15 @@ end
 player_list.map{ |p| p.set_credits(sumple) }
 
 
-# Ordering
-player_list = player_list.sort_by(&:country).sort_by(&:first_name).sort_by(&:last_name)
+# Ordering credits
+player_list = player_list.select{ |r| r.credits > 0 }
+  .sort_by(&:country)
+  .sort_by(&:first_name)
+  .sort_by(&:last_name)
 
 File.open('result.txt', 'w') do |file|
   player_list.each do |row|
-	  file.puts row.to_string if row.credits > 0
+	  file.puts row.to_string
   end
 end
 
